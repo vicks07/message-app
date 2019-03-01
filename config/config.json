@@ -1,0 +1,6 @@
+{
+    "development":{
+        "PORT":3000,
+        "MONGODB_URI":"mongodb://admin:admin1@ds155665.mlab.com:55665/message-app"
+    }
+}
