@@ -6,11 +6,13 @@ if(env === 'development' || env === 'test'){
     let envConfig = config[env];
     //console.log(envConfig);
 
-    Object.keys(envConfig).forEach((doc)=>{
-       // console.log(doc)
+    Object.keys(envConfig).forEach((doc)=>{    
+        
         process.env[doc] = envConfig[doc];
         //console.log(process.env[doc]);
-    });    
+    }); 
+    //process.env.USER_APP = "localhost:"+process.env.PORT+'/'; 
+    //console.log(process.env);  
 }
 
 module.exports = {

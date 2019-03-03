@@ -1,6 +1,13 @@
 {
     "development":{
         "PORT":3000,
-        "MONGODB_URI":"mongodb://admin:admin1@ds155665.mlab.com:55665/message-app"
+        "MONGODB_URI":"mongodb://admin:admin1@ds155665.mlab.com:55665/message-app",
+        "USER_APP":"localhost:",
+        "MESSAGE_APP":"localhost:"
+    },
+    "production":{
+        "MONGODB_URI":"mongodb://admin:admin1@ds155665.mlab.com:55665/message-app",
+        "USER_APP":"localhost:",
+        "MESSAGE_APP":"localhost:"
     }
 }
