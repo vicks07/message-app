@@ -4,6 +4,8 @@ const {MongoClient,ObjectId} = require('mongodb');
 
 const mongoURI = process.env.MONGODB_URI;
 
+// /message/create/conversation -> Create a new conversation between users
+
 router.post('/create/conversation',()=>{
     MongoClient.connect(mongoURI,{useNewUrlParser:true},(err,client)=>{
         if(err){
@@ -35,6 +37,8 @@ router.post('/create/conversation',()=>{
     });
 });
 
+
+// /message/update/conversation -> Reply to a message sent by a user in a conversation.
 router.patch('/update/conversation',()=>{
     MongoClient.connect(mongoURI,{useNewUrlParser:true},(err,client)=>{
         if(err){
@@ -65,6 +69,7 @@ router.patch('/update/conversation',()=>{
     });
 });
 
+// message/read -> List the most recent messages
 router.post('/read',()=>{
     MongoClient.connect(mongoURI,{useNewUrlParser:true},(err,client)=>{
         if(err){
@@ -90,6 +95,7 @@ router.post('/read',()=>{
     });
 });
 
+// message/read/conversation/:conversationId -> Get the entire conversation
 router.get('/read/conversation/:conversationId',()=>{
     MongoClient.connect(mongoURI,{useNewUrlParser:true},(err,client)=>{
         if(err){
@@ -111,6 +117,7 @@ router.get('/read/conversation/:conversationId',()=>{
     });
 });
 
+// /message/update/status/conversation -> Update the status of a message when viewed
 router.patch('/update/status/conversation',()=>{
     MongoClient.connect(mongoURI,{useNewUrlParser:true},(err,client)=>{
         if(err){

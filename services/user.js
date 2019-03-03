@@ -49,6 +49,7 @@ router.post('/create',()=>{
     });
 });
 
+// /user/read -> Get User Info from user id
 router.post('/read',()=>{
     MongoClient.connect(mongoURI,{useNewUrlParser:true},(err,client)=>{
         if(err){
