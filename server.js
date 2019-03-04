@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const {MongoClient,ObjectId} = require('mongodb');
 const moment = require('moment');
 const app = express();
+const path = require('path');
 
 //console.log(new Date());
 
@@ -26,8 +27,8 @@ app.listen(process.env.PORT,()=>{
 
 app.use('/user',user);
 app.use('/message',message);
-
-
+console.log(path.join(__dirname, "./public"));
+app.use(express.static(path.join(__dirname, "public")));
 
 // app.patch('/modify/user',(req,res)=>{    
 //     MongoClient.connect(mongoURI,{useNewUrlParser:true},(err,client)=>{
