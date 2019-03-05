@@ -57,7 +57,7 @@ A simple set of API's to build a messaging application
      }
     ```
    - ##### To get conversation Details
-    [Get Conversation Details](/message/read/conversation/:conversationId) -POST /message/read/conversation/:conversationId
+    [Get Conversation Details](/message/read/conversation/:conversationId) -GET /message/read/conversation/:conversationId
     
    - ##### To update conversation status to Read
     [Update Conversation](/message/update/status/conversation) -PATCH /message/update/status/conversation
