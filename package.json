@@ -5,7 +5,11 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js"
+    "dev": "env-cmd ./config/dev.env nodemon server.js",
+    "test": "env-cmd ./config/test.env jest --watch"
+  },
+  "jest":{
+    "testEnvironment":"node"
   },
   "author": "Vikram",
   "license": "ISC",
@@ -16,6 +20,8 @@
     "mongodb": "^3.1.13"
   },
   "devDependencies": {
+    "env-cmd": "^8.0.2",
+    "jest": "^23.6.0",
     "nodemon": "^1.18.10"
   }
 }

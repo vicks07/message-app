@@ -16,7 +16,13 @@ app.use(bodyParser.json());
 const mongoURI = process.env.MONGODB_URI;
 
 MongoClient.connect(mongoURI,{useNewUrlParser:true},(err,client)=>{
-    console.log('Connected to MongoDB');
+    if(err){
+    console.log('Could Not Connect to MongoDB',err);
+
+    }
+    else{
+        console.log('Connected to MongoDB');
+    }
 });
 
 
@@ -27,7 +33,7 @@ app.listen(process.env.PORT,()=>{
 
 app.use('/user',user);
 app.use('/message',message);
-console.log(path.join(__dirname, "./public"));
+//console.log(path.join(__dirname, "./public"));
 app.use(express.static(path.join(__dirname, "public")));
 
 // app.patch('/modify/user',(req,res)=>{    
